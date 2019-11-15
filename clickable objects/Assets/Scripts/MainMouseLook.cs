@@ -23,7 +23,7 @@ public class MainMouseLook : MonoBehaviour {
     {
         var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")); //mouse x and y
 
-        mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
+        mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity * smoothing, sensitivity)); //*smoothing
         smoothV.x = Mathf.Lerp(smoothV.x, mouseDelta.x, 1f / smoothing);
         smoothV.y = Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing);
         mouseLook += smoothV;
