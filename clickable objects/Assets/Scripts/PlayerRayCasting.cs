@@ -16,7 +16,7 @@ public class PlayerRayCasting : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.green);
+        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.red);
 
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit , distanceToSee)) //needs to hit something to move to next if statement and key E is pressed
         {

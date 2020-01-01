@@ -9,8 +9,8 @@ public class HoldingItems : MonoBehaviour //Picked Up Items
     private void onMouseDown()
     {
         GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = theInventory.position;
-        this.transform.parent = GameObject.Find("Inventory").transform;
+        this.transform.position = theInventory.position; //what's in front of main cam
+        this.transform.parent = GameObject.Find("Inventory").transform; //destination in 3d space to hover the object and place
     }
 
     void OnMouseUp()
