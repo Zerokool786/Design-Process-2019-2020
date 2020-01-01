@@ -33,4 +33,19 @@ public class MainMouseLook : MonoBehaviour {
         player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
     
 	}
+
+    public Transform theInventory;
+
+    private void onMouseDown()
+    {
+        GetComponent<Rigidbody>().useGravity = false;
+        this.transform.position = theInventory.position;
+        this.transform.parent = GameObject.Find("Inventory").transform; //destination in 3d space to hover the object and place
+    }
+
+    void OnMouseUp()
+    {
+        this.transform.parent = null;
+        GetComponent<Rigidbody>().useGravity = true;
+    }
 }
